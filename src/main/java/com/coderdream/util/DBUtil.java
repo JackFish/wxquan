@@ -34,19 +34,9 @@ public class DBUtil {
 
 			Map<String, String> envMap = System.getenv();
 
-			String os = envMap.get("OS");
-			// local
-			if (null != os && "Windows_NT".equals(os.trim())) {
-				username = prop.getProperty("local.username");
-				password = prop.getProperty("local.password");
-				url = prop.getProperty("local.url");
-			}
-			// SAE
-			else {
-				username = prop.getProperty("sae.username");
-				password = prop.getProperty("sae.password");
-				url = prop.getProperty("sae.url");
-			}
+            username = prop.getProperty("sae.username");
+            password = prop.getProperty("sae.password");
+            url = prop.getProperty("sae.url");
 
 			Class.forName(driver).newInstance();
 			// con = DriverManager.getConnection(url + "?useServerPrepStmts=true", username, password);
