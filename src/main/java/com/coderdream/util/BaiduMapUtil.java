@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import java.util.Base64;
 import net.sf.json.JSONObject;
 
 import org.dom4j.Document;
@@ -207,8 +207,8 @@ public class BaiduMapUtil {
             String jsonCoord = httpRequest(convertUrl);
             JSONObject jsonObject = JSONObject.fromObject(jsonCoord);
             // 对转换后的坐标进行Base64解码
-            location.setBd09Lng(new String(Base64.decode(jsonObject.getString("x")),"UTF-8"));
-            location.setBd09Lat(new String(Base64.decode(jsonObject.getString("y")),"UTF-8"));
+            location.setBd09Lng(new String(Base64.getDecoder().decode(jsonObject.getString("x")),"UTF-8"));
+            location.setBd09Lat(new String(Base64.getDecoder().decode(jsonObject.getString("y")),"UTF-8"));
         } catch (Exception e) {
             location = null;
             e.printStackTrace();

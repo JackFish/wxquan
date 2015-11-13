@@ -19,7 +19,7 @@ public class SignUtil {
 	/**
 	 * 与开发模式接口配置信息中的Token保持一致
 	 */
-	private static String token = "weixinToken";
+	private static String token = "test123";
 
 	/**
 	 * 校验签名

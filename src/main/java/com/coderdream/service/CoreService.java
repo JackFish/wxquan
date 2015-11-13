@@ -40,7 +40,7 @@ public class CoreService {
 	/**
 	 * 处理微信发来的请求
 	 * 
-	 * @param request
+	 * @param inputStream
 	 * @return xml
 	 */
 	public String processRequest(InputStream inputStream) {
